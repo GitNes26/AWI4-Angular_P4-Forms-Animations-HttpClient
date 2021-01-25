@@ -1,0 +1,8 @@
+.boton{
+    height: 100px;
+    font-weight: bolder;
+    padding: 15px;
+    border-radius:10px;
+    cursor: pointer;
+
+}

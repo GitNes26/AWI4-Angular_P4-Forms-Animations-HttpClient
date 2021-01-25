@@ -1,1 +1,2 @@
-<button [@openClose]="isOpen ? 'open' : 'closed'" ></button>
+<button [@openClose]="isOpen ? 'open' : 'close'" class='boton' (click)='toggle()'>
+{{isOpen ? 'Open' : 'Closed'}}</button>

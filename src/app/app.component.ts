@@ -1,6 +1,6 @@
-import { animation } from '@angular/animations';
+import { animation, keyframes } from '@angular/animations';
 import { Component } from '@angular/core';
-import { trigger,state,style,animate,transition } from "@angular/platform-browser/animations";
+import { trigger,state,style,animate,transition } from "@angular/animations"
 
 @Component({
   selector: 'app-root',
@@ -9,20 +9,24 @@ import { trigger,state,style,animate,transition } from "@angular/platform-browse
   animations: [
      trigger('openClose', [
        state('open', style({
-         height: '250px',
          opacity: 1,
          backgroundColor: 'green'
        })),
        state('close', style({
-         height: '150px',
-         opacity: 0.5,
-         backgroundColor: 'red'
+         opacity: 0.8,
+         backgroundColor: 'red',
+         color: 'white'
        })),
-       transition('open => closed', [
-         animate(6000)
+       transition('open => close', [
+         animate(600)
        ]),
        transition('close => open' , [
-         animate(300)
+         animate(2000, keyframes([
+           style({backgroundColor: 'yellow', offset:0.25}),
+           style({backgroundColor: 'blue', offset:0.8}),
+           style({backgroundColor: 'green', offset:0.9}),
+           style({backgroundColor: 'orange', offset:1.0}),
+         ]))
        ])
      ])
   ]
