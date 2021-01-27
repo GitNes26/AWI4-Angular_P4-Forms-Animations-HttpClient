@@ -1,0 +1,18 @@
+<h2>Ejemplo 1 | Animar un componente</h2>
+<button [@openClose]="isOpen ? 'open' : 'close'" class='boton btn' (click)='toggle()'>
+{{isOpen ? 'Open' : 'Closed'}}</button>
+
+<hr/>
+
+<h2>Ejemplo 2 | Animar otro componente con un boton</h2>
+<div [@cambioForma]="estadoFigura ? 'cuadro' : 'circulo'" class='figura'>
+    <p>{{estadoFigura ? 'STOP!' : 'GO!' }}</p>
+</div>
+<button class='mt-2 btn btn-outline-primary btn-lg' (click)='animar()'>Animar</button>
+
+<hr/>
+
+<h2>Ejemplo 3 | uso de directivas en animaciones</h2>
+<div @myInsertRemoveTrigger *ngIf="isOpen" class='figura'>
+    <p>{{isOpen ? 'ngIf!' : 'ngFor!' }}</p>
+</div>

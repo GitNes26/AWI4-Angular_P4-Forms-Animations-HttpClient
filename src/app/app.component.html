@@ -1,2 +1,5 @@
-<button [@openClose]="isOpen ? 'open' : 'close'" class='boton' (click)='toggle()'>
-{{isOpen ? 'Open' : 'Closed'}}</button>
+<app-menu></app-menu>
+
+<div [@routeAnimations]="prepareRoute(outlet)" class='container mt-5'>
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>
